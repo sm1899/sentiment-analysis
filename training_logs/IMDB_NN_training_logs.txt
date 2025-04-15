@@ -1,0 +1,106 @@
+=== IMDB Neural Network Binary Sentiment Analysis Training Log ===
+Started at: 2025-04-13 09:36:59
+Log file: IMDB_NN_training_logs/NN_training_log_20250413_093659.txt
+======================================================================
+Using device: cuda
+Loading datasets...
+Loading train dataset...
+Train set size: 25000
+Loading test dataset...
+Test set size: 25000
+
+Sentiment distribution in train set:
+sentiment
+0    12500
+1    12500
+Name: count, dtype: int64
+
+Sentiment distribution in test set:
+sentiment
+1    12500
+0    12500
+Name: count, dtype: int64
+Converting token indices to lists...
+Vocabulary file not found. Calculating from data...
+Vocabulary size: 31239
+Maximum sequence length: 240
+
+Splitting train set: Using last 10% as validation set...
+Training set size: 22500
+Validation set size: 2500
+
+=== Neural Network Model Architecture and Hyperparameters ===
+Dataset: IMDB movie reviews (binary sentiment classification)
+Model type: Neural Network with Embedding Layer
+Vocabulary size: 31239
+Maximum sequence length: 240
+Embedding dimension: 100
+Hidden layer 1 size: 256
+Hidden layer 2 size: 128
+Output size: 1 (binary classification)
+Learning rate: 0.001
+Number of epochs: 10
+Batch size: 64
+Activation function: ReLU
+Loss function: BCEWithLogitsLoss (for binary classification)
+Optimizer: Adam
+Using GPU: True
+GPU device: NVIDIA RTX A6000
+======================================================================
+
+Neural Network Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.7037   |   52.44   % |   0.6827   |   56.28   %
+*** New best model saved with validation accuracy: 56.28% ***
+  2    |   0.5496   |   66.49   % |   0.7145   |   57.68   %
+*** New best model saved with validation accuracy: 57.68% ***
+  3    |   0.4164   |   74.60   % |   0.8342   |   60.36   %
+*** New best model saved with validation accuracy: 60.36% ***
+  4    |   0.3288   |   82.00   % |   0.7762   |   67.12   %
+*** New best model saved with validation accuracy: 67.12% ***
+  5    |   0.2418   |   87.76   % |   0.8434   |   69.92   %
+*** New best model saved with validation accuracy: 69.92% ***
+  6    |   0.1720   |   91.46   % |   0.8377   |   72.52   %
+*** New best model saved with validation accuracy: 72.52% ***
+  7    |   0.1304   |   93.82   % |   0.9364   |   73.92   %
+*** New best model saved with validation accuracy: 73.92% ***
+  8    |   0.1063   |   94.84   % |   0.9659   |   74.56   %
+*** New best model saved with validation accuracy: 74.56% ***
+  9    |   0.0874   |   95.51   % |   1.0058   |   75.16   %
+*** New best model saved with validation accuracy: 75.16% ***
+  10   |   0.0770   |   96.04   % |   1.0211   |   76.00   %
+*** New best model saved with validation accuracy: 76.00% ***
+--------------------------------------------------------------------------------
+
+Loading best model for testing...
+
+Test Results on Best Model Checkpoint:
+Accuracy: 74.61%
+Precision: 72.96%
+Recall: 78.19%
+F1 Score: 75.49%
+
+Per-Class Metrics:
+Negative (0): Precision=76.51%, Recall=71.02%, F1=73.66%
+Positive (1): Precision=72.96%, Recall=78.19%, F1=75.49%
+
+File Outputs:
+- IMDB NN Training logs saved to: IMDB_NN_training_logs/NN_training_log_20250413_093659.txt
+- IMDB NN Training graphs saved to: IMDB_NN_training_graphs/ directory
+- IMDB NN Best model saved as: IMDB_NN_models/nn_best_model.pt
+
+Neural Network Training completed at: 2025-04-13 09:37:32
+======================================================================
+
+=== Note on Architecture for Neural Network ===
+For binary classification (IMDB movie review task):
+- Used BCEWithLogitsLoss (Binary Cross Entropy with Logits)
+- Embedding layer for efficient token representation
+- Feed-forward network with two hidden layers
+- First hidden layer: 256 neurons
+- Second hidden layer: 128 neurons
+- ReLU activation and dropout for regularization
+- Optimized for GPU usage with embedding instead of one-hot encoding
+======================================================================

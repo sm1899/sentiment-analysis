@@ -1,0 +1,223 @@
+=== Sentiment Analysis Training Log ===
+Started at: 2025-04-13 05:44:10
+Log file: twitter_training_logs/training_log_20250413_054410.txt
+==================================================
+Using device: cuda
+Loading dataset...
+Sentiment distribution:
+sentiment
+Negative    22358
+Positive    20655
+Neutral     18108
+Name: count, dtype: int64
+Converting token indices to lists...
+Vocabulary size: 13349
+Sequence length: 19
+
+=== Model Architecture and Hyperparameters ===
+Input size: 253631
+Hidden layer 1 size: 256
+Hidden layer 2 size: 128
+Output size: 3
+Learning rate: 0.001
+Number of epochs: 10
+Batch size: 64
+Activation function: ReLU
+Loss function: CrossEntropyLoss (for multi-class classification)
+Optimizer: Adam
+==================================================
+
+=== Starting 5-Fold Cross-Validation ===
+
+--- Fold 1/5 ---
+Train set size: 48896, Validation set size: 12225
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.7011   |   69.38   % |   0.4724   |   81.20   %
+*** New best model saved with validation accuracy: 81.20% ***
+  2    |   0.1966   |   92.49   % |   0.4433   |   83.98   %
+*** New best model saved with validation accuracy: 83.98% ***
+  3    |   0.0853   |   96.44   % |   0.5190   |   84.67   %
+*** New best model saved with validation accuracy: 84.67% ***
+  4    |   0.0630   |   97.21   % |   0.6164   |   84.14   %
+  5    |   0.0549   |   97.52   % |   0.6513   |   84.51   %
+  6    |   0.0508   |   97.65   % |   0.7359   |   84.34   %
+  7    |   0.0476   |   97.65   % |   0.7625   |   84.44   %
+  8    |   0.0478   |   97.67   % |   0.7940   |   84.24   %
+  9    |   0.0443   |   97.80   % |   0.8650   |   83.98   %
+  10   |   0.0434   |   97.77   % |   0.8953   |   83.95   %
+--------------------------------------------------------------------------------
+
+Fold 1 Final Results:
+Accuracy: 84.67%
+Precision: 84.67%
+Recall: 84.67%
+F1 Score: 84.67%
+
+Per-Class Metrics:
+Negative: Precision=86.24%, Recall=86.20%, F1=86.22%
+Neutral: Precision=83.96%, Recall=82.00%, F1=82.97%
+Positive: Precision=83.63%, Recall=85.41%, F1=84.51%
+
+--- Fold 2/5 ---
+Train set size: 48897, Validation set size: 12224
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.7041   |   69.01   % |   0.4689   |   81.41   %
+*** New best model saved with validation accuracy: 81.41% ***
+  2    |   0.2014   |   92.26   % |   0.4313   |   84.13   %
+*** New best model saved with validation accuracy: 84.13% ***
+  3    |   0.0877   |   96.37   % |   0.5231   |   84.96   %
+*** New best model saved with validation accuracy: 84.96% ***
+  4    |   0.0647   |   97.07   % |   0.5911   |   84.77   %
+  5    |   0.0557   |   97.38   % |   0.6577   |   84.84   %
+  6    |   0.0517   |   97.58   % |   0.7224   |   84.89   %
+  7    |   0.0491   |   97.63   % |   0.7464   |   84.99   %
+*** New best model saved with validation accuracy: 84.99% ***
+  8    |   0.0469   |   97.72   % |   0.8309   |   84.70   %
+  9    |   0.0468   |   97.70   % |   0.8689   |   84.32   %
+  10   |   0.0454   |   97.70   % |   0.9280   |   84.59   %
+--------------------------------------------------------------------------------
+
+Fold 2 Final Results:
+Accuracy: 84.99%
+Precision: 85.04%
+Recall: 84.99%
+F1 Score: 85.01%
+
+Per-Class Metrics:
+Negative: Precision=87.92%, Recall=85.71%, F1=86.80%
+Neutral: Precision=81.45%, Recall=83.46%, F1=82.44%
+Positive: Precision=85.00%, Recall=85.51%, F1=85.25%
+
+--- Fold 3/5 ---
+Train set size: 48897, Validation set size: 12224
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.7083   |   68.57   % |   0.4656   |   81.35   %
+*** New best model saved with validation accuracy: 81.35% ***
+  2    |   0.2024   |   92.22   % |   0.4210   |   84.53   %
+*** New best model saved with validation accuracy: 84.53% ***
+  3    |   0.0884   |   96.34   % |   0.5164   |   85.09   %
+*** New best model saved with validation accuracy: 85.09% ***
+  4    |   0.0663   |   97.14   % |   0.5937   |   84.87   %
+  5    |   0.0560   |   97.44   % |   0.6537   |   85.02   %
+  6    |   0.0520   |   97.60   % |   0.6904   |   84.99   %
+  7    |   0.0490   |   97.61   % |   0.7936   |   84.09   %
+  8    |   0.0468   |   97.71   % |   0.8012   |   84.69   %
+  9    |   0.0460   |   97.76   % |   0.8342   |   84.44   %
+  10   |   0.0438   |   97.80   % |   0.9228   |   84.30   %
+--------------------------------------------------------------------------------
+
+Fold 3 Final Results:
+Accuracy: 85.09%
+Precision: 85.12%
+Recall: 85.09%
+F1 Score: 85.10%
+
+Per-Class Metrics:
+Negative: Precision=87.89%, Recall=86.04%, F1=86.96%
+Neutral: Precision=82.58%, Recall=82.88%, F1=82.73%
+Positive: Precision=84.24%, Recall=85.97%, F1=85.10%
+
+--- Fold 4/5 ---
+Train set size: 48897, Validation set size: 12224
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.7053   |   68.79   % |   0.4653   |   81.95   %
+*** New best model saved with validation accuracy: 81.95% ***
+  2    |   0.1995   |   92.48   % |   0.4367   |   84.36   %
+*** New best model saved with validation accuracy: 84.36% ***
+  3    |   0.0873   |   96.38   % |   0.5350   |   84.47   %
+*** New best model saved with validation accuracy: 84.47% ***
+  4    |   0.0637   |   97.17   % |   0.6250   |   84.58   %
+*** New best model saved with validation accuracy: 84.58% ***
+  5    |   0.0564   |   97.39   % |   0.6695   |   84.56   %
+  6    |   0.0503   |   97.56   % |   0.7477   |   84.71   %
+*** New best model saved with validation accuracy: 84.71% ***
+  7    |   0.0497   |   97.63   % |   0.7631   |   84.52   %
+  8    |   0.0470   |   97.65   % |   0.8169   |   84.47   %
+  9    |   0.0452   |   97.79   % |   0.8489   |   84.44   %
+  10   |   0.0444   |   97.81   % |   0.9080   |   84.38   %
+--------------------------------------------------------------------------------
+
+Fold 4 Final Results:
+Accuracy: 84.71%
+Precision: 84.74%
+Recall: 84.71%
+F1 Score: 84.69%
+
+Per-Class Metrics:
+Negative: Precision=83.96%, Recall=88.44%, F1=86.14%
+Neutral: Precision=83.88%, Recall=82.10%, F1=82.98%
+Positive: Precision=86.30%, Recall=83.11%, F1=84.68%
+
+--- Fold 5/5 ---
+Train set size: 48897, Validation set size: 12224
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.7041   |   69.02   % |   0.4618   |   81.65   %
+*** New best model saved with validation accuracy: 81.65% ***
+  2    |   0.2025   |   92.15   % |   0.4442   |   83.88   %
+*** New best model saved with validation accuracy: 83.88% ***
+  3    |   0.0879   |   96.41   % |   0.5123   |   84.88   %
+*** New best model saved with validation accuracy: 84.88% ***
+  4    |   0.0629   |   97.16   % |   0.5748   |   84.86   %
+  5    |   0.0545   |   97.41   % |   0.6487   |   84.82   %
+  6    |   0.0516   |   97.60   % |   0.7027   |   84.85   %
+  7    |   0.0473   |   97.64   % |   0.7565   |   84.79   %
+  8    |   0.0460   |   97.73   % |   0.8529   |   84.47   %
+  9    |   0.0454   |   97.75   % |   0.8695   |   84.15   %
+  10   |   0.0425   |   97.83   % |   0.9884   |   83.75   %
+--------------------------------------------------------------------------------
+
+Fold 5 Final Results:
+Accuracy: 84.88%
+Precision: 84.90%
+Recall: 84.88%
+F1 Score: 84.87%
+
+Per-Class Metrics:
+Negative: Precision=86.54%, Recall=86.98%, F1=86.76%
+Neutral: Precision=84.92%, Recall=81.56%, F1=83.21%
+Positive: Precision=83.09%, Recall=85.51%, F1=84.28%
+
+==================================================
+===== 5-Fold Cross-Validation Results =====
+==================================================
+Average Accuracy: 84.87%
+Average Precision: 84.89%
+Average Recall: 84.87%
+Average F1 Score: 84.87%
+
+Average Per-Class Metrics:
+--------------------------------------------------
+  Class    | Precision  |   Recall   |  F1 Score 
+--------------------------------------------------
+ Negative  |   86.51   % |   86.67   % |   86.57   %
+ Neutral   |   83.36   % |   82.40   % |   82.87   %
+ Positive  |   84.45   % |   85.10   % |   84.76   %
+--------------------------------------------------
+
+File Outputs:
+- Training logs saved to: twitter_training_logs/training_log_20250413_054410.txt
+- Training graphs saved to: twitter_training_graphs/ directory
+- Best models saved as: twitter_models/best_model_fold[1-5].pt
+
+Training completed at: 2025-04-13 06:07:47
+==================================================

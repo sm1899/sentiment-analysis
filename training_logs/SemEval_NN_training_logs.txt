@@ -1,0 +1,287 @@
+=== SemEval Binary Sentiment Analysis Neural Network Training Log (Multi-GPU) ===
+Started at: 2025-04-13 16:44:35
+Log file: SemEval_NN_training_logs/NN_multigpu_training_log_20250413_164435.txt
+======================================================================
+=== SemEval Binary Sentiment Analysis Neural Network Training Log (Multi-GPU) ===
+Started at: 2025-04-13 16:44:35
+Log file: SemEval_NN_training_logs/NN_multigpu_training_log_20250413_164435.txt
+======================================================================
+Number of available GPUs: 3
+Loading dataset...
+Sentiment distribution:
+sentiment
+0    800000
+4    800000
+Name: count, dtype: int64
+Converting token indices to lists...
+
+Remapped sentiment distribution (0=negative, 1=positive):
+sentiment_label
+0    800000
+1    800000
+Name: count, dtype: int64
+Vocabulary size: 85156
+Sequence length: 14
+
+=== Neural Network Model Architecture and Hyperparameters ===
+Model type: Feed-forward Neural Network (NN) with Multi-GPU support
+Number of GPUs: 3
+Vocabulary size: 85156
+Sequence length: 14
+Hidden layer 1 size: 256
+Hidden layer 2 size: 128
+Output size: 1 (binary classification)
+Learning rate: 0.001
+Number of epochs: 10
+Batch size: 96 (total across all GPUs)
+Activation function: ReLU
+Loss function: BCEWithLogitsLoss (for binary classification)
+Optimizer: Adam
+======================================================================
+Successfully converted data to appropriate format.
+
+=== Starting 5-Fold Cross-Validation with Multi-GPU Training ===
+
+Preparing fold 1/5...
+Train indices size: 1280000, Validation indices size: 320000
+
+Preparing fold 1/5...
+Train indices size: 1280000, Validation indices size: 320000
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.5916   |   67.32   % |   0.5173   |   74.25   %
+*** New best model saved with validation accuracy: 74.25% ***
+  2    |   0.5020   |   75.57   % |   0.4878   |   76.28   %
+*** New best model saved with validation accuracy: 76.28% ***
+  3    |   0.4815   |   77.01   % |   0.4761   |   77.06   %
+*** New best model saved with validation accuracy: 77.06% ***
+  4    |   0.4708   |   77.58   % |   0.4713   |   77.35   %
+*** New best model saved with validation accuracy: 77.35% ***
+  5    |   0.4640   |   78.19   % |   0.4668   |   77.65   %
+*** New best model saved with validation accuracy: 77.65% ***
+  6    |   0.4587   |   78.50   % |   0.4641   |   77.82   %
+*** New best model saved with validation accuracy: 77.82% ***
+  7    |   0.4546   |   78.79   % |   0.4638   |   77.96   %
+*** New best model saved with validation accuracy: 77.96% ***
+  8    |   0.4512   |   79.01   % |   0.4619   |   78.03   %
+*** New best model saved with validation accuracy: 78.03% ***
+  9    |   0.4484   |   79.19   % |   0.4614   |   78.04   %
+*** New best model saved with validation accuracy: 78.04% ***
+  10   |   0.4457   |   79.36   % |   0.4601   |   78.09   %
+*** New best model saved with validation accuracy: 78.09% ***
+
+Fold 1 Final Results:
+Accuracy: 78.09%
+Precision: 78.51%
+Recall: 77.56%
+F1 Score: 78.03%
+
+Per-Class Metrics:
+Negative (0): Precision=77.69%, Recall=78.64%, F1=78.16%
+Positive (1): Precision=78.51%, Recall=77.56%, F1=78.03%
+
+Successfully completed fold 1 and loaded results.
+
+
+Preparing fold 2/5...
+Train indices size: 1280000, Validation indices size: 320000
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.5933   |   66.87   % |   0.5173   |   74.28   %
+*** New best model saved with validation accuracy: 74.28% ***
+  2    |   0.5035   |   75.52   % |   0.4867   |   76.49   %
+*** New best model saved with validation accuracy: 76.49% ***
+  3    |   0.4824   |   76.98   % |   0.4756   |   77.13   %
+*** New best model saved with validation accuracy: 77.13% ***
+  4    |   0.4718   |   77.67   % |   0.4708   |   77.57   %
+*** New best model saved with validation accuracy: 77.57% ***
+  5    |   0.4647   |   78.09   % |   0.4664   |   77.81   %
+*** New best model saved with validation accuracy: 77.81% ***
+  6    |   0.4594   |   78.47   % |   0.4634   |   77.87   %
+*** New best model saved with validation accuracy: 77.87% ***
+  7    |   0.4553   |   78.62   % |   0.4616   |   78.08   %
+*** New best model saved with validation accuracy: 78.08% ***
+  8    |   0.4517   |   78.82   % |   0.4616   |   78.12   %
+*** New best model saved with validation accuracy: 78.12% ***
+  9    |   0.4488   |   79.12   % |   0.4605   |   78.12   %
+  10   |   0.4462   |   79.21   % |   0.4592   |   78.19   %
+*** New best model saved with validation accuracy: 78.19% ***
+
+
+Fold 2 Final Results:
+Accuracy: 78.19%
+Precision: 79.09%
+Recall: 76.56%
+F1 Score: 77.80%
+
+Per-Class Metrics:
+Negative (0): Precision=77.35%, Recall=79.81%, F1=78.56%
+Positive (1): Precision=79.09%, Recall=76.56%, F1=77.80%
+
+Successfully completed fold 2 and loaded results.
+
+
+
+Preparing fold 3/5...
+Train indices size: 1280000, Validation indices size: 320000
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.5733   |   69.46   % |   0.5117   |   74.62   %
+*** New best model saved with validation accuracy: 74.62% ***
+  2    |   0.4986   |   75.82   % |   0.4868   |   76.42   %
+*** New best model saved with validation accuracy: 76.42% ***
+  3    |   0.4796   |   77.16   % |   0.4756   |   77.11   %
+*** New best model saved with validation accuracy: 77.11% ***
+  4    |   0.4696   |   77.76   % |   0.4705   |   77.43   %
+*** New best model saved with validation accuracy: 77.43% ***
+  5    |   0.4629   |   78.27   % |   0.4663   |   77.65   %
+*** New best model saved with validation accuracy: 77.65% ***
+  6    |   0.4577   |   78.48   % |   0.4648   |   77.82   %
+*** New best model saved with validation accuracy: 77.82% ***
+  7    |   0.4538   |   78.88   % |   0.4633   |   77.91   %
+*** New best model saved with validation accuracy: 77.91% ***
+  8    |   0.4505   |   78.91   % |   0.4609   |   78.01   %
+*** New best model saved with validation accuracy: 78.01% ***
+  9    |   0.4476   |   79.18   % |   0.4617   |   78.06   %
+*** New best model saved with validation accuracy: 78.06% ***
+  10   |   0.4451   |   79.16   % |   0.4600   |   78.10   %
+*** New best model saved with validation accuracy: 78.10% ***
+
+Fold 3 Final Results:
+Accuracy: 78.10%
+Precision: 78.80%
+Recall: 76.79%
+F1 Score: 77.78%
+
+Per-Class Metrics:
+Negative (0): Precision=77.45%, Recall=79.41%, F1=78.42%
+Positive (1): Precision=78.80%, Recall=76.79%, F1=77.78%
+
+Successfully completed fold 3 and loaded results.
+
+
+Preparing fold 4/5...
+Train indices size: 1280000, Validation indices size: 320000
+
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.5865   |   68.20   % |   0.5245   |   74.00   %
+*** New best model saved with validation accuracy: 74.00% ***
+  2    |   0.5142   |   74.82   % |   0.5002   |   75.80   %
+*** New best model saved with validation accuracy: 75.80% ***
+  3    |   0.4944   |   76.21   % |   0.4868   |   76.57   %
+*** New best model saved with validation accuracy: 76.57% ***
+  4    |   0.4840   |   76.91   % |   0.4817   |   76.83   %
+*** New best model saved with validation accuracy: 76.83% ***
+  5    |   0.4767   |   77.35   % |   0.4773   |   77.09   %
+*** New best model saved with validation accuracy: 77.09% ***
+  6    |   0.4714   |   77.62   % |   0.4759   |   77.18   %
+*** New best model saved with validation accuracy: 77.18% ***
+  7    |   0.4668   |   77.99   % |   0.4734   |   77.41   %
+*** New best model saved with validation accuracy: 77.41% ***
+  8    |   0.4631   |   78.19   % |   0.4736   |   77.33   %
+  9    |   0.4608   |   78.29   % |   0.4712   |   77.62   %
+*** New best model saved with validation accuracy: 77.62% ***
+  10   |   0.4578   |   78.45   % |   0.4717   |   77.59   %
+
+Fold 4 Final Results:
+Accuracy: 77.62%
+Precision: 78.90%
+Recall: 75.37%
+F1 Score: 77.09%
+
+Per-Class Metrics:
+Negative (0): Precision=76.45%, Recall=79.86%, F1=78.12%
+Positive (1): Precision=78.90%, Recall=75.37%, F1=77.09%
+
+Successfully completed fold 4 and loaded results.
+
+
+Preparing fold 5/5...
+Train indices size: 1280000, Validation indices size: 320000
+
+Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.5752   |   69.27   % |   0.5118   |   74.66   %
+*** New best model saved with validation accuracy: 74.66% ***
+  2    |   0.4988   |   75.76   % |   0.4851   |   76.48   %
+*** New best model saved with validation accuracy: 76.48% ***
+  3    |   0.4797   |   77.12   % |   0.4749   |   77.11   %
+*** New best model saved with validation accuracy: 77.11% ***
+  4    |   0.4698   |   77.73   % |   0.4696   |   77.51   %
+*** New best model saved with validation accuracy: 77.51% ***
+  5    |   0.4634   |   78.21   % |   0.4662   |   77.72   %
+*** New best model saved with validation accuracy: 77.72% ***
+  6    |   0.4583   |   78.36   % |   0.4641   |   77.82   %
+*** New best model saved with validation accuracy: 77.82% ***
+  7    |   0.4543   |   78.75   % |   0.4619   |   78.03   %
+*** New best model saved with validation accuracy: 78.03% ***
+  8    |   0.4509   |   78.96   % |   0.4606   |   78.09   %
+*** New best model saved with validation accuracy: 78.09% ***
+  9    |   0.4480   |   79.17   % |   0.4611   |   78.12   %
+*** New best model saved with validation accuracy: 78.12% ***
+  10   |   0.4455   |   79.31   % |   0.4597   |   78.19   %
+*** New best model saved with validation accuracy: 78.19% ***
+Fold 5 Final Results:
+Accuracy: 78.19%
+Precision: 78.55%
+Recall: 77.59%
+F1 Score: 78.07%
+
+Per-Class Metrics:
+Negative (0): Precision=77.83%, Recall=78.78%, F1=78.30%
+Positive (1): Precision=78.55%, Recall=77.59%, F1=78.07%
+
+Successfully completed fold 5 and loaded results.
+
+======================================================================
+===== Neural Network 5-Fold Cross-Validation Results (Multi-GPU) =====
+======================================================================
+Average Accuracy: 78.04%
+Average Precision: 78.77%
+Average Recall: 76.77%
+Average F1 Score: 77.76%
+
+Average Per-Class Metrics:
+--------------------------------------------------
+   Class     | Precision  |   Recall   |  F1 Score 
+--------------------------------------------------
+Negative (0) |   77.35   % |   79.30   % |   78.31   %
+Positive (1) |   78.77   % |   76.77   % |   77.76   %
+--------------------------------------------------
+
+File Outputs:
+- NN Training logs saved to: SemEval_NN_training_logs/NN_multigpu_training_log_20250413_164435.txt
+- NN Training graphs saved to: SemEval_NN_training_graphs/ directory
+- NN Best models saved as: SemEval_NN_binary_models/NN_best_model_fold[1-5].pt
+
+Multi-GPU Neural Network Training completed at: 2025-04-13 17:37:08
+======================================================================
+
+=== Notes on Multi-GPU Acceleration ===
+- Using PyTorch's DistributedDataParallel (DDP) for efficient multi-GPU training
+- Each GPU processes a portion of each batch in parallel
+- Using memory-efficient approach to encoding token indices
+- Gradients are automatically synchronized across GPUs
+- Batch size is reduced to fit in GPU memory
+- Data is distributed using DistributedSampler to ensure each GPU gets different samples
+- Only rank 0 (first GPU) performs validation and metrics reporting
+- Regular garbage collection to prevent memory leaks
+======================================================================
+Log file closed successfully
+Logger closed successfully.
+Training completed successfully.

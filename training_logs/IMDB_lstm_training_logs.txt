@@ -1,0 +1,106 @@
+=== IMDB LSTM Binary Sentiment Analysis Training Log ===
+Started at: 2025-04-13 09:39:59
+Log file: IMDB_lstm_training_logs/lstm_training_log_20250413_093959.txt
+======================================================================
+Using device: cuda
+GPU device: NVIDIA RTX A6000
+Loading datasets...
+Loading train dataset...
+Train set size: 25000
+Loading test dataset...
+Test set size: 25000
+
+Sentiment distribution in train set:
+sentiment
+0    12500
+1    12500
+Name: count, dtype: int64
+
+Sentiment distribution in test set:
+sentiment
+1    12500
+0    12500
+Name: count, dtype: int64
+Converting token indices to lists...
+Loading vocabulary information...
+Loaded vocabulary size: 31239
+Loaded maximum sequence length: 240
+Vocabulary size: 31239
+Maximum sequence length: 240
+
+Splitting train set: Using last 10% as validation set...
+Training set size: 22500
+Validation set size: 2500
+
+=== LSTM Model Architecture and Hyperparameters ===
+Dataset: IMDB movie reviews (binary sentiment classification)
+Model type: LSTM
+Vocabulary size: 31239
+Embedding dimension: 100
+Hidden layer size: 256
+Output size: 1 (binary classification)
+Dropout rate: 0.3
+Learning rate: 0.001
+Number of epochs: 10
+Batch size: 64
+Loss function: BCEWithLogitsLoss (for binary classification)
+Optimizer: Adam
+Using GPU: True
+======================================================================
+
+LSTM Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.6939   |   50.51   % |   0.6909   |   53.88   %
+*** New best model saved with validation accuracy: 53.88% ***
+  2    |   0.6836   |   53.98   % |   0.6835   |   56.00   %
+*** New best model saved with validation accuracy: 56.00% ***
+  3    |   0.6641   |   56.38   % |   0.6832   |   55.80   %
+  4    |   0.6287   |   61.66   % |   0.6997   |   50.08   %
+  5    |   0.5730   |   69.66   % |   0.6623   |   65.20   %
+*** New best model saved with validation accuracy: 65.20% ***
+  6    |   0.4371   |   80.77   % |   0.4886   |   78.00   %
+*** New best model saved with validation accuracy: 78.00% ***
+  7    |   0.2963   |   88.48   % |   0.4640   |   81.44   %
+*** New best model saved with validation accuracy: 81.44% ***
+  8    |   0.2129   |   92.48   % |   0.4473   |   82.48   %
+*** New best model saved with validation accuracy: 82.48% ***
+  9    |   0.1548   |   94.88   % |   0.4820   |   82.72   %
+*** New best model saved with validation accuracy: 82.72% ***
+  10   |   0.1130   |   96.56   % |   0.5272   |   83.32   %
+*** New best model saved with validation accuracy: 83.32% ***
+--------------------------------------------------------------------------------
+
+Loading best model for testing...
+
+Test Results on Best Model Checkpoint:
+Accuracy: 82.39%
+Precision: 81.31%
+Recall: 84.11%
+F1 Score: 82.69%
+
+Per-Class Metrics:
+Negative (0): Precision=83.54%, Recall=80.66%, F1=82.08%
+Positive (1): Precision=81.31%, Recall=84.11%, F1=82.69%
+
+File Outputs:
+- IMDB LSTM Training logs saved to: IMDB_lstm_training_logs/lstm_training_log_20250413_093959.txt
+- IMDB LSTM Training graphs saved to: IMDB_lstm_training_graphs/ directory
+- IMDB LSTM Best model saved as: IMDB_lstm_models/lstm_best_model.pt
+
+LSTM Training completed at: 2025-04-13 09:41:02
+======================================================================
+
+=== Note on Loss Functions and Architecture for LSTM ===
+For binary classification (IMDB movie review task):
+- Used BCEWithLogitsLoss (Binary Cross Entropy with Logits)
+- Combines Sigmoid activation and binary cross entropy in one layer
+- More numerically stable than using separate Sigmoid + BCELoss
+
+As per Karpathy's RNN architecture recommendations:
+- Using last hidden state from LSTM for classification
+- LSTM processes the entire sequence and final hidden state is used
+- This approach captures the overall sentiment of the review
+- GPU-optimized implementation for faster training
+======================================================================

@@ -1,0 +1,233 @@
+=== SemEval LSTM Binary Sentiment Analysis Training Log ===
+Started at: 2025-04-13 07:00:54
+Log file: SemEval_lstm_training_logs/lstm_training_log_20250413_070054.txt
+======================================================================
+Using device: cuda
+Loading dataset...
+Original sentiment distribution:
+sentiment
+0    800000
+4    800000
+Name: count, dtype: int64
+Converting token indices to lists...
+
+Remapped sentiment distribution (0=negative, 1=positive):
+sentiment_label
+0    800000
+1    800000
+Name: count, dtype: int64
+Vocabulary size: 85156
+Sequence length: 14
+
+=== LSTM Model Architecture and Hyperparameters ===
+Dataset: SemEval binary sentiment classification
+Model type: LSTM
+Vocabulary size: 85156
+Embedding dimension: 100
+Hidden layer size: 256
+Output size: 1 (binary classification)
+Dropout rate: 0.3
+Learning rate: 0.001
+Number of epochs: 10
+Batch size: 64
+Loss function: BCEWithLogitsLoss (for binary classification)
+Optimizer: Adam
+======================================================================
+
+=== Starting 5-Fold Cross-Validation with LSTM ===
+
+--- Fold 1/5 ---
+Train set size: 1280000, Validation set size: 320000
+
+LSTM Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.4468   |   78.67   % |   0.4125   |   80.67   %
+*** New best model saved with validation accuracy: 80.67% ***
+  2    |   0.3866   |   82.38   % |   0.4023   |   81.49   %
+*** New best model saved with validation accuracy: 81.49% ***
+  3    |   0.3562   |   84.11   % |   0.4022   |   81.65   %
+*** New best model saved with validation accuracy: 81.65% ***
+  4    |   0.3289   |   85.58   % |   0.4111   |   81.51   %
+  5    |   0.3047   |   86.84   % |   0.4205   |   81.19   %
+  6    |   0.2839   |   87.88   % |   0.4348   |   80.94   %
+  7    |   0.2674   |   88.71   % |   0.4499   |   80.76   %
+  8    |   0.2551   |   89.28   % |   0.4576   |   80.53   %
+  9    |   0.2455   |   89.73   % |   0.4793   |   80.44   %
+  10   |   0.2379   |   90.09   % |   0.4876   |   80.27   %
+--------------------------------------------------------------------------------
+
+LSTM Fold 1 Final Results:
+Accuracy: 81.65%
+Precision: 81.26%
+Recall: 82.44%
+F1 Score: 81.85%
+
+Per-Class Metrics:
+Negative (0): Precision=82.07%, Recall=80.86%, F1=81.46%
+Positive (1): Precision=81.26%, Recall=82.44%, F1=81.85%
+
+--- Fold 2/5 ---
+Train set size: 1280000, Validation set size: 320000
+
+LSTM Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.4467   |   78.70   % |   0.4107   |   80.93   %
+*** New best model saved with validation accuracy: 80.93% ***
+  2    |   0.3876   |   82.28   % |   0.4018   |   81.52   %
+*** New best model saved with validation accuracy: 81.52% ***
+  3    |   0.3571   |   83.99   % |   0.4043   |   81.68   %
+*** New best model saved with validation accuracy: 81.68% ***
+  4    |   0.3302   |   85.47   % |   0.4109   |   81.52   %
+  5    |   0.3060   |   86.72   % |   0.4206   |   81.21   %
+  6    |   0.2851   |   87.79   % |   0.4333   |   81.11   %
+  7    |   0.2684   |   88.61   % |   0.4466   |   80.78   %
+  8    |   0.2553   |   89.26   % |   0.4676   |   80.43   %
+  9    |   0.2458   |   89.70   % |   0.4780   |   80.51   %
+  10   |   0.2384   |   90.02   % |   0.4782   |   80.42   %
+--------------------------------------------------------------------------------
+
+LSTM Fold 2 Final Results:
+Accuracy: 81.68%
+Precision: 82.02%
+Recall: 81.08%
+F1 Score: 81.55%
+
+Per-Class Metrics:
+Negative (0): Precision=81.35%, Recall=82.27%, F1=81.81%
+Positive (1): Precision=82.02%, Recall=81.08%, F1=81.55%
+
+--- Fold 3/5 ---
+Train set size: 1280000, Validation set size: 320000
+
+LSTM Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.4457   |   78.73   % |   0.4097   |   80.92   %
+*** New best model saved with validation accuracy: 80.92% ***
+  2    |   0.3864   |   82.37   % |   0.3991   |   81.64   %
+*** New best model saved with validation accuracy: 81.64% ***
+  3    |   0.3557   |   84.10   % |   0.4017   |   81.59   %
+  4    |   0.3283   |   85.55   % |   0.4111   |   81.48   %
+  5    |   0.3036   |   86.85   % |   0.4189   |   81.22   %
+  6    |   0.2822   |   87.93   % |   0.4448   |   81.01   %
+  7    |   0.2654   |   88.76   % |   0.4485   |   80.81   %
+  8    |   0.2526   |   89.40   % |   0.4584   |   80.60   %
+  9    |   0.2425   |   89.84   % |   0.4715   |   80.36   %
+  10   |   0.2353   |   90.18   % |   0.4871   |   80.37   %
+--------------------------------------------------------------------------------
+
+LSTM Fold 3 Final Results:
+Accuracy: 81.64%
+Precision: 81.52%
+Recall: 81.74%
+F1 Score: 81.63%
+
+Per-Class Metrics:
+Negative (0): Precision=81.76%, Recall=81.53%, F1=81.65%
+Positive (1): Precision=81.52%, Recall=81.74%, F1=81.63%
+
+--- Fold 4/5 ---
+Train set size: 1280000, Validation set size: 320000
+
+LSTM Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.4468   |   78.69   % |   0.4120   |   80.78   %
+*** New best model saved with validation accuracy: 80.78% ***
+  2    |   0.3870   |   82.37   % |   0.4059   |   81.40   %
+*** New best model saved with validation accuracy: 81.40% ***
+  3    |   0.3561   |   84.08   % |   0.4031   |   81.55   %
+*** New best model saved with validation accuracy: 81.55% ***
+  4    |   0.3286   |   85.59   % |   0.4124   |   81.30   %
+  5    |   0.3040   |   86.80   % |   0.4240   |   81.17   %
+  6    |   0.2831   |   87.88   % |   0.4382   |   80.99   %
+  7    |   0.2666   |   88.69   % |   0.4540   |   80.75   %
+  8    |   0.2538   |   89.27   % |   0.4667   |   80.59   %
+  9    |   0.2440   |   89.76   % |   0.4703   |   80.39   %
+  10   |   0.2371   |   90.07   % |   0.4836   |   80.21   %
+--------------------------------------------------------------------------------
+
+LSTM Fold 4 Final Results:
+Accuracy: 81.55%
+Precision: 82.10%
+Recall: 80.68%
+F1 Score: 81.38%
+
+Per-Class Metrics:
+Negative (0): Precision=81.03%, Recall=82.42%, F1=81.72%
+Positive (1): Precision=82.10%, Recall=80.68%, F1=81.38%
+
+--- Fold 5/5 ---
+Train set size: 1280000, Validation set size: 320000
+
+LSTM Training Progress:
+--------------------------------------------------------------------------------
+Epoch  | Train Loss | Train Acc  |  Val Loss  |  Val Acc  
+--------------------------------------------------------------------------------
+  1    |   0.4463   |   78.69   % |   0.4099   |   81.00   %
+*** New best model saved with validation accuracy: 81.00% ***
+  2    |   0.3868   |   82.39   % |   0.4026   |   81.59   %
+*** New best model saved with validation accuracy: 81.59% ***
+  3    |   0.3560   |   84.09   % |   0.4012   |   81.66   %
+*** New best model saved with validation accuracy: 81.66% ***
+  4    |   0.3286   |   85.56   % |   0.4102   |   81.52   %
+  5    |   0.3042   |   86.83   % |   0.4199   |   81.39   %
+  6    |   0.2835   |   87.85   % |   0.4354   |   80.99   %
+  7    |   0.2665   |   88.68   % |   0.4454   |   80.84   %
+  8    |   0.2537   |   89.31   % |   0.4625   |   80.60   %
+  9    |   0.2441   |   89.74   % |   0.4725   |   80.59   %
+  10   |   0.2369   |   90.12   % |   0.4797   |   80.27   %
+--------------------------------------------------------------------------------
+
+LSTM Fold 5 Final Results:
+Accuracy: 81.66%
+Precision: 81.94%
+Recall: 81.25%
+F1 Score: 81.59%
+
+Per-Class Metrics:
+Negative (0): Precision=81.38%, Recall=82.07%, F1=81.72%
+Positive (1): Precision=81.94%, Recall=81.25%, F1=81.59%
+
+======================================================================
+===== SemEval LSTM 5-Fold Cross-Validation Results =====
+======================================================================
+Average Accuracy: 81.64%
+Average Precision: 81.77%
+Average Recall: 81.44%
+Average F1 Score: 81.60%
+
+Average Per-Class Metrics:
+----------------------------------------------------------------------
+   Class     | Precision  |   Recall   |  F1 Score 
+----------------------------------------------------------------------
+Negative (0) |   81.52   % |   81.83   % |   81.67   %
+Positive (1) |   81.77   % |   81.44   % |   81.60   %
+----------------------------------------------------------------------
+
+File Outputs:
+- SemEval LSTM Training logs saved to: SemEval_lstm_training_logs/lstm_training_log_20250413_070054.txt
+- SemEval LSTM Training graphs saved to: SemEval_lstm_training_graphs/ directory
+- SemEval LSTM Best models saved as: SemEval_lstm_models/lstm_best_model_fold[1-5].pt
+
+LSTM Training completed at: 2025-04-13 09:14:17
+======================================================================
+
+=== Note on Loss Functions for LSTM ===
+For binary classification (SemEval task):
+- Used BCEWithLogitsLoss (Binary Cross Entropy with Logits)
+- Combines Sigmoid activation and binary cross entropy in one layer
+- More numerically stable than using separate Sigmoid + BCELoss
+- Appropriate for 2-class tasks (negative/positive sentiment)
+
+As per Karpathy's RNN architecture recommendations:
+- Using last hidden state from LSTM for classification
+- LSTM processes the entire sequence and final hidden state is used
+- This approach captures the overall sentiment of the text
+======================================================================
